@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Обчислення суми двох чисел</h1>
+    <form id="sumForm">
+        <table>
+            <tr>
+                <td align="left">Число 1:</td>
+                <td align="right"><input type="number" id="num1" ></td>
+            </tr>
+            <tr>
+                <td align="left">Число 2:</td>
+                <td align="right"><input type="number" id="num2" ></td>
+            </tr>
+            <tr align="center">
+                <td align="left"><input type="button" value="Обчислити" onclick="calculateSum()"></td>
+                <td align="right"><input type="reset" value="Очистити"></td>
+            </tr>
+            <tr>
+                <td align="left">Результат:</td>
+                <td align="right"><input type="text" id="sumResult" readonly></td>
+            </tr>
+        </table>
+    </form>
+    <div id="result" class="result"></div>
+    
+
+    <script>
+        function calculateSum() {
+            var num1 = parseFloat(document.getElementById('num1').value);
+            var num2 = parseFloat(document.getElementById('num2').value);
+            var sum = num1 + num2;
+
+            if (!isNaN(sum)) {
+                document.getElementById('sumResult').value = sum;
+                
+            } else {
+                alert('Будь ласка, введіть числа.');
+            }
+        }
+    </script>
+</body>
+</html>
